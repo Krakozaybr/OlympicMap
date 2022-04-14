@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_info">
+
+    <fragment
+        android:id="@+id/nav_info"
+        android:name="com.krak.olympicmap.activity_main.fragments.info.InfoFragment"
+        android:label="@string/info"
+        tools:layout="@layout/info_fragment" />
+
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="com.krak.olympicmap.activity_main.fragments.map.MapFragment"
+        android:label="@string/map"
+        tools:layout="@layout/map_fragment" />
+
+    <fragment
+        android:id="@+id/nav_selected"
+        android:name="com.krak.olympicmap.activity_main.fragments.selected.SelectedFragment"
+        android:label="@string/selected"
+        tools:layout="@layout/selected_fragment" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.krak.olympicmap.activity_main.fragments.settings.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/settings_fragment" />
+</navigation>

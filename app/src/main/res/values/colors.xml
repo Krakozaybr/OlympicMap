@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="name_activity_color">#066AC9</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="main">#0B61A4</color>
+    <color name="main_darker">#25567B</color>
+    <color name="main_dark">#033E6B</color>
+    <color name="main_lighter">#3F92D2</color>
+    <color name="main_light">#66A3D2</color>
+
+    <color name="second_main">#1B1BB3</color>
+    <color name="second_darker">#313186</color>
+    <color name="second_dark">#090974</color>
+    <color name="second_lighter">#4F4FD9</color>
+    <color name="second_light">#7373D9</color>
+
+    <color name="third_main">#00AF64</color>
+    <color name="third_darker">#218359</color>
+    <color name="third_dark">#007241</color>
+    <color name="third_lighter">#36D792</color>
+    <color name="third_light">#61D7A4</color>
+
+    <color name="hint">#EFEFEF</color>
+
+</resources>
