@@ -35,7 +35,9 @@ public class NameActivity extends AppCompatActivity {
     private void addEventListeners() {
         // Нажата кнопка "Пропустить"
         binding.skipNameBtn.setOnClickListener(view -> {
-            preferenceManager.saveName(getString(R.string.defaultName));
+            if (preferenceManager.getName().isEmpty()) {
+                preferenceManager.saveName(getString(R.string.defaultName));
+            }
             goNext();
         });
         // Нажата кнопка "Продолжить"
