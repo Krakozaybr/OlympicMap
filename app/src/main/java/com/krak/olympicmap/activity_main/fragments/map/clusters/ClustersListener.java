@@ -27,7 +27,7 @@ public class ClustersListener implements ClusterListener, ClusterTapListener {
     public boolean onClusterTap(Cluster cluster) {
         Toast.makeText(activity,
                 "Вы нажали на кластер с " + cluster.getSize() + " элементами",
-                Toast.LENGTH_SHORT);
+                Toast.LENGTH_SHORT).show();
         return true;
     }
 }
