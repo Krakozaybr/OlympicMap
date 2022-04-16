@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.krak.olympicmap.R;
-import com.krak.olympicmap.databinding.SelectedFragmentBinding;
 import com.krak.olympicmap.databinding.SettingsFragmentBinding;
 import com.krak.olympicmap.name_activity.NameActivity;
 import com.krak.olympicmap.utils.PreferenceManager;

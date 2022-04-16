@@ -6,17 +6,10 @@ import android.view.View;
 
 public class CustomAnimations {
     public static void showAccordion(View view){
-        view.animate()
-                .translationYBy(-view.getHeight()).translationY(0).setDuration(100)
-                .alpha(1f)
-                .setListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        super.onAnimationEnd(animation);
-                        view.setVisibility(View.VISIBLE);
-                        view.bringToFront();
-                    }
-                });
+        view.setTranslationY(0);
+        view.setAlpha(1);
+        view.setVisibility(View.VISIBLE);
+        view.bringToFront();
     }
 
     public static void hideAccordion(View view){
@@ -44,6 +37,14 @@ public class CustomAnimations {
         } else {
             showAccordion(view);
             indicator.setRotation(0);
+        }
+    }
+
+    public static void toggleAccordion(View view){
+        if (isVisible(view)){
+            hideAccordion(view);
+        } else {
+            showAccordion(view);
         }
     }
 }

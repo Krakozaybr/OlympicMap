@@ -1,5 +1,8 @@
-package com.krak.olympicmap.activity_main.fragments.info;
+package com.krak.olympicmap.entities;
 
+/*
+    Модель, включающая в себя страну и количество её медалей
+* */
 public class Medal {
     private String country;
     private int gold, silver, bronze, total;

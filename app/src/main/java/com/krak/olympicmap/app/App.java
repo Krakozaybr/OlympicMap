@@ -4,6 +4,7 @@ import android.app.Application;
 
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.krak.olympicmap.utils.PointsStorage;
 import com.yandex.mapkit.MapKitFactory;
 
 public class App extends Application {
@@ -22,6 +23,7 @@ public class App extends Application {
     private void initMaps() {
         MapKitFactory.setApiKey("70951948-173f-45f9-a418-44e2989f536e");
         MapKitFactory.initialize(this);
+        PointsStorage.init();
     }
 
     public static App getInstance() {

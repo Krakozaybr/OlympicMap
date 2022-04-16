@@ -1,37 +1,24 @@
 package com.krak.olympicmap.activity_main.fragments.info;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.ScaleAnimation;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
 
 import com.krak.olympicmap.R;
 import com.krak.olympicmap.databinding.InfoFragmentBinding;
 import com.krak.olympicmap.dialogs.MessageDialog;
+import com.krak.olympicmap.entities.Medal;
 import com.krak.olympicmap.utils.CustomAnimations;
 import com.krak.olympicmap.utils.DataManager;
 import com.krak.olympicmap.utils.PreferenceManager;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 
 public class InfoFragment extends Fragment {
 
@@ -50,11 +37,13 @@ public class InfoFragment extends Fragment {
     private void addEventListeners(){
         addAccordionEventListeners();
         addImageViewsEventListeners();
+        // Убираем подсказку
         binding.adviceCross.setOnClickListener(view -> {
             binding.adviceLayout.setVisibility(View.GONE);
         });
     }
 
+    // Показываем диалоговое окно с информацией
     private void showInfo(int titleId, int textId){
         MessageDialog dialog = new MessageDialog(
                 getString(titleId),
@@ -63,6 +52,7 @@ public class InfoFragment extends Fragment {
         dialog.show(getParentFragmentManager(), "custom");
     }
 
+    // Диалоговые окна с информацией о картинке, на которую нажали
     private void addImageViewsEventListeners(){
         binding.greecePresident.setOnClickListener(view -> {
             showInfo(R.string.greece_president, R.string.greece_president_info);
@@ -81,6 +71,8 @@ public class InfoFragment extends Fragment {
         });
     }
 
+    // Чтобы не загромождать экран, информация разбита на разделы.
+    // Здесь мы определяем скрытие/показ этих разделов при нажатии на их заголовки
     private void addAccordionEventListeners(){
         binding.olympicFireTitleLayout.setOnClickListener(view -> {
             CustomAnimations.toggleAccordion(
@@ -115,6 +107,7 @@ public class InfoFragment extends Fragment {
     }
 
     private void setInitialData(){
+        // Грузим страны и их медальный счёт в отдельном потоке, чтобы приложение не зависло
         MutableLiveData<ArrayList<Medal>> medalsData = new MutableLiveData<>();
         DataManager dataManager = new DataManager(getActivity());
         new Thread(() -> medalsData.postValue(dataManager.loadMedals())).start();

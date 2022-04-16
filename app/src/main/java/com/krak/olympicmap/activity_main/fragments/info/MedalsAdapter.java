@@ -6,13 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.krak.olympicmap.R;
+import com.krak.olympicmap.entities.Medal;
 
 import java.util.ArrayList;
-
+/*
+    Используется в InfoFragment в списке стран и полученных ими медалей
+*/
 public class MedalsAdapter extends RecyclerView.Adapter<MedalsAdapter.MedalHolder> {
 
     private Context context;
